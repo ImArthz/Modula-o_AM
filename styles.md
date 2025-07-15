@@ -1,256 +1,316 @@
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
+  /* ===== ESTILOS GERAIS ===== */
+  :root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --accent: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --text: #212529;
+    --text-light: #f8f9fa;
   }
-  
-  h1, h2, h3, h4 {
-    color: #2c3e50;
+
+  /* ===== FUNDO E TIPOGRAFIA ===== */
+  section {
+    background-color: #f5f7fa;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    color: var(--text);
+    padding: 60px;
   }
-  
+
+  /* ===== CABEÇALHOS ===== */
   h1 {
-    text-align: center;
-    border-bottom: 3px solid #3498db;
+    color: var(--secondary);
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    border-bottom: 3px solid var(--primary);
     padding-bottom: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   }
-  
+
+  h2 {
+    color: var(--primary);
+    font-size: 2.2em;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    margin-top: 1.5em;
+  }
+
+  h3 {
+    color: var(--secondary);
+    font-size: 1.8em;
+    margin-top: 1em;
+  }
+
+  /* ===== TEXTO E PARÁGRAFOS ===== */
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+
+  strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  /* ===== LISTAS ===== */
+  ul, ol {
+    font-size: 1.2em;
+    margin-left: 1.5em;
+    line-height: 1.6;
+  }
+
+  li {
+    margin-bottom: 0.8em;
+    position: relative;
+  }
+
+  ul li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  /* ===== TABELAS ===== */
   table {
     width: 100%;
-    margin: 20px 0;
+    border-collapse: collapse;
+    margin: 2em 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
   }
-  
+
   th {
-    background-color: #3498db;
+    background-color: var(--primary);
     color: white;
-  }
-  
-  td, th {
     padding: 12px;
     text-align: left;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 12px;
     border-bottom: 1px solid #ddd;
   }
-  
-  tr:hover {
-    background-color: #f5f5f5;
+
+  tr:nth-child(even) {
+    background-color: rgba(52, 152, 219, 0.05);
   }
-  
+
+  tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+  }
+
+  /* ===== BLOCOS DE CÓDIGO ===== */
   pre {
-    background: #2c3e50;
-    color: white;
-    padding: 15px;
+    background-color: var(--secondary);
+    color: #f8f8f2;
+    padding: 1em;
     border-radius: 5px;
     overflow-x: auto;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 1.5em 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
-  
-  ul {
-    padding-left: 20px;
+
+  code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
   }
-  
-  li {
-    margin-bottom: 8px;
-  }
-  
+
+  /* ===== IMAGENS ===== */
   img {
     max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  img[alt="centered"] {
     display: block;
     margin: 0 auto;
   }
-  
-  .slide {
-    margin-bottom: 60px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  section {
-    background-color: #dbdccf;
-    background-size: cover;
+
+  img[alt="small"] {
+    width: 40%;
   }
 
+  img[alt="medium"] {
+    width: 65%;
+  }
+
+  img[alt="large"] {
+    width: 85%;
+  }
+
+  /* ===== CLASSES UTILITÁRIAS ===== */
   .transparent {
-    background-color: transparent!important;
+    background-color: transparent !important;
   }
 
-  section.transparent img {
-    background-color: transparent!important;
+  .text-center {
+    text-align: center !important;
   }
 
-  .transparent-table-tr-td-th {
-    background-color: rgba(0, 0, 0, 0.0) !important;
+  .text-right {
+    text-align: right !important;
   }
 
-  .cabecalho {
-    position: absolute;
-    top: 10%;
-    margin-left: 5%;
-    margin-right: 10%;
-    font-size: 48px;
-    font-weight: bold;
+  .text-left {
+    text-align: left !important;
   }
 
-  .conteudo {
-    top: 30%;
-    margin-top: 7.5vh;
-    margin-left: 5%;
-    margin-right: 5%;
-    font-size: 28px;
-    text-align: justify;
+  .text-primary {
+    color: var(--primary) !important;
   }
 
-  .conteudo-absoluto {
-    position: absolute;
-    top: 30%;
-    margin-left: 5%;
-    margin-right: 5%;
-    font-size: 28px;
-    text-align: justify;
+  .text-secondary {
+    color: var(--secondary) !important;
   }
-  .huge {
-    font-size: 32px;
+
+  .text-accent {
+    color: var(--accent) !important;
   }
-  .large {
-    font-size: 24px;
+
+  .bg-primary {
+    background-color: var(--primary) !important;
+    color: white !important;
   }
-  .normal {
-    font-size: 22px;
+
+  .bg-secondary {
+    background-color: var(--secondary) !important;
+    color: white !important;
   }
-  .regular {
-    font-size: 18px;
+
+  .bg-accent {
+    background-color: var(--accent) !important;
+    color: white !important;
   }
-  .small {
-    font-size: 16px;
+
+  .shadow {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
   }
-  .footnotesize {
-    font-size: 14px;
+
+  .rounded {
+    border-radius: 5px !important;
   }
-  .scriptsize {
-    font-size: 12px;
+
+  /* ===== LAYOUTS DE GRADE ===== */
+  .grid {
+    display: grid;
+    gap: 2em;
+    margin: 2em 0;
   }
-  .tiny {
-    font-size: 10px;
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .bold {
-    font-weight: bold;
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
   }
-  section.centered table {
-    margin-left: auto;
-    margin-right: auto;
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
   }
-  section.lead p {
-    text-align: justify;
-    font-size: 18px;
+
+  .grid-item {
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
-  section.lead h1, h2, h3, h4 {
+
+  /* ===== ANIMAÇÕES ===== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  /* ===== COMPONENTES ESPECÍFICOS PARA TELECOM ===== */
+  .signal-diagram {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+  .modulation-formula {
+    font-size: 1.5em;
     text-align: center;
-  }
-  
-  .grid-50-50 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: justify;
+    padding: 1em;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 5px;
+    margin: 1em 0;
   }
 
-  .grid-66-33 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    text-align: justify;
-  }
-
-  .grid-75-25 {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    text-align: justify;
-  }
-
-  .grid-80-20 {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    text-align: justify;
-  }
-
-  .grid-33-66 {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    text-align: justify;
-  }
-
-  .grid-element {
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-  }
-  img[alt=grid-img] {
-    display: block;
+  .frequency-spectrum {
     width: 100%;
+    height: 300px;
+    background: linear-gradient(90deg, #3498db, #e74c3c);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
   }
 
-  img[alt=grid-img-35] {
-    display: block;
-    margin: auto;
-    width: 35%;
+  /* ===== RESPONSIVIDADE ===== */
+  @media (max-width: 768px) {
+    section {
+      padding: 30px;
+    }
+    
+    h1 {
+      font-size: 2em;
+    }
+    
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+    }
   }
-
-  img[alt=grid-img-50] {
-    display: block;
-    margin: auto;
-    width: 50%;
-  }
-
-  img[alt=grid-img-75] {
-    display: block;
-    margin: auto;
-    width: 75%;
-  }
-
-
-  img[alt=centered-img] {
-    display: block;
-    margin: auto;
-  }
-
-  img[alt=arquitetura-microprocessador] {
-    display: block;
-    margin: auto;
-    width: 45%;
-  }
-
-  .mid-aligned-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .flex-container {
-    display: flex;
-  }
-
-  .column-container {
-    flex: 1;
-    padding: 5px;
-  }
-
-  .column-row-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .quarter-row {
-    flex: 1;
-  }
-
-  .three-quarter-row {
-    flex: 3;
-  }
-
 </style>
 
+<!-- MathJax Configuration -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
