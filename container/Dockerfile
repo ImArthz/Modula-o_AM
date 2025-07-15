@@ -8,28 +8,16 @@ RUN apt-get update && \
     npm \
     python-is-python3 \
     git \
-    wget \
-    unzip
+    wget
 
-# Instala Marp CLI e configurações globais
-RUN npm install -g @marp-team/marp-cli && \
-    mkdir -p /workspace/{styles,imgs,slides}
+# Instala Marp CLI
+RUN npm install -g @marp-team/marp-cli
 
 # Configura o diretório de trabalho
 WORKDIR /workspace
-
-# Copia os arquivos necessários (serão montados via volume)
-COPY ./styles/styles.css /workspace/styles/
-COPY ./imgs /workspace/imgs/
-COPY ./slides /workspace/slides/
-
-# Instala MathJax localmente (opcional)
-RUN wget https://github.com/mathjax/MathJax/archive/refs/tags/3.2.0.zip && \
-    unzip 3.2.0.zip -d /workspace/libs/ && \
-    rm 3.2.0.zip
 
 # Configura a porta de exposição
 EXPOSE 8080
 
 # Comando de inicialização
-CMD ["marp", "--server", "--html", "--watch", "slides/", "--port", "8080", "--allow-local-files"]
+CMD ["marp", "--server", "--html", "--watch", ".", "--port", "8080", "--allow-local-files"]
