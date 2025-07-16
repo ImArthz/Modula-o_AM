@@ -1,23 +1,11 @@
 FROM ubuntu:latest
 
-# Instala dependências
+# Installs python, node and npm
 RUN apt-get update && \
-    apt-get install -y \
-    python3 \
-    nodejs \
-    npm \
-    python-is-python3 \
-    git \
-    wget
+    apt-get install -y python3 nodejs npm python-is-python3
 
-# Instala Marp CLI
+# Install marpit-cli package
 RUN npm install -g @marp-team/marp-cli
 
-# Configura o diretório de trabalho
+# Set working directory
 WORKDIR /workspace
-
-# Configura a porta de exposição
-EXPOSE 8080
-
-# Comando de inicialização
-CMD ["marp", "--server", "--html", "--watch", ".", "--port", "8080", "--allow-local-files"]
