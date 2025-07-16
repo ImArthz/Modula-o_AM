@@ -22,7 +22,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    overflow: auto;
+    overflow: hidden; /* Evita rolagem na seção principal */
   }
 
   .content-wrapper {
@@ -48,30 +48,30 @@
 
   /* ===== TEXTO E PARÁGRAFOS ===== */
   p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 1em;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 0.8em;
   }
 
   /* ===== LISTAS ===== */
   ul, ol {
-    font-size: 1em;
+    font-size: 0.9em;
     padding-left: 1.2em;
   }
 
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
   }
 
   /* ===== TABELAS ===== */
   table {
     width: 100%;
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
 
   /* ===== IMAGENS ===== */
   img {
-    max-height: 40vh;
+    max-height: 35vh; /* Reduzido para dar mais espaço */
     max-width: 100%;
     object-fit: contain;
   }
@@ -79,17 +79,18 @@
   /* ===== GRIDS ===== */
   .grid-container {
     display: grid;
-    gap: 15px;
-    height: 70vh;
+    gap: 10px;
+    height: auto; /* Removido altura fixa para evitar rolagem */
   }
 
   /* ===== CÓDIGO ===== */
   pre {
-    font-size: 0.8em;
-    max-height: 50vh;
+    font-size: 0.75em;
+    max-height: 40vh; /* Reduzido para dar mais espaço */
     overflow: auto;
   }
 </style>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
