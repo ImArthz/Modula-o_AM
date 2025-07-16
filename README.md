@@ -170,23 +170,29 @@ Onde:
 
 ## 👨‍💻 Autores
 
-<table style="margin: 0 auto;">
+<div style="text-align: center;">
+    <table style="margin: 0 auto; text-align: center;">
   <tr>
-    <td align="center">
+    <td colspan="5"><strong>Alunos</strong></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://avatars.githubusercontent.com/u/217106070?v=4" alt="Avatar de Anderson santos" style="border-radius:50%; border:4px solid #06D6A0; box-shadow:0 0 10px #06D6A0; width:100px;"><br>
+      <strong>Anderson Santos</strong><br>
       <a href="https://github.com/anderrsantos">
-        <img src="https://avatars.githubusercontent.com/u/217106070?v=4" width="100" style="border-radius:50%; border:4px solid #06D6A0; box-shadow:0 0 10px #06D6A0;"><br>
-        <sub><b>João Antonio</b></sub>
+        <img src="https://img.shields.io/github/followers/anderrsantos?label=Seguidores&style=social&logo=github" alt="GitHub - Anderson Santos">
       </a>
     </td>
-    <td align="center">
+    <td>
+      <img src="https://avatars.githubusercontent.com/u/135072001?v=4" alt="Avatar de Arthur Mendonça" style="border-radius:50%; border:4px solid #239A3B; box-shadow:0 0 10px #239A3B; width:100px;"><br>
+      <strong>Arthur Mendonça</strong><br>
       <a href="https://github.com/ImArthz">
-        <img src="https://avatars.githubusercontent.com/u/135072001?v=4" width="100" style="border-radius:50%; border:4px solid #239A3B; box-shadow:0 0 10px #239A3B;"><br>
-        <sub><b>Arthur Mendonça</b></sub>
+        <img src="https://img.shields.io/github/followers/ImArthz?label=Seguidores&style=social&logo=github" alt="GitHub - Arthur Mendonça">
       </a>
     </td>
   </tr>
-</table>
-
+    </table>
+</div>
 ## 🔗 Links Úteis
 <div style="text-align: center; margin-top: 30px;">
   <a href="https://imarthz.github.io/Modulacao_AM/">
