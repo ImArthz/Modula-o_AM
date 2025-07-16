@@ -23,44 +23,44 @@ graph TD
 
 ## INSTALAÇÃO PASSO-A-PASSO
 
-# 1. Atualize os pacotes do sistema e instale dependências básicas
+### 1. Atualize os pacotes do sistema e instale dependências básicas
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-pip portaudio19-dev
 ```
 
-# 2. Instale as bibliotecas Python necessárias
+### 2. Instale as bibliotecas Python necessárias
 ```
 pip install numpy matplotlib sounddevice scipy
 ```
 
-# 3. Clone o repositório do projeto
+### 3. Clone o repositório do projeto
 ```
 git clone https://github.com/ImArthz/Modulacao_AM.git
 ```
 
-# 4. Acesse o diretório do projeto
+### 4. Acesse o diretório do projeto
 ```
 cd Modulacao_AM
 cd aplicacao_de_sinais-Telecomunicacao-AM
 ```
-# 5. Execute o sistema
+### 5. Execute o sistema
 ```
 python3 index.py
 ```
 
 ## TROUBLESHOOTING (SOLUÇÃO DE PROBLEMAS)
 
-# Caso encontre erros com o PortAudio:
+### Caso encontre erros com o PortAudio:
 ```
 sudo apt-get remove --purge python3-pyaudio
 sudo apt-get install python3-pyaudio
 ```
-# Caso tenha problemas com permissões:
+### Caso tenha problemas com permissões:
 ```
 sudo chmod -R 777 /dev/snd
 ```
-# Para reinstalar todas as dependências Python:
+### Para reinstalar todas as dependências Python:
 ```
 pip uninstall numpy matplotlib sounddevice scipy
 pip install --upgrade pip
@@ -69,30 +69,30 @@ pip install numpy matplotlib sounddevice scipy
 
 ## OPÇÕES DE EXECUÇÃO
 
-# Executar em modo debug (mostra logs detalhados)
+### Executar em modo debug (mostra logs detalhados)
 ```
 python3 index.py --debug
 ```
 
-# Executar com taxa de amostragem personalizada (ex: 22050 Hz)
+### Executar com taxa de amostragem personalizada (ex: 22050 Hz)
 ```
 python3 index.py --sample-rate 22050
 ```
 
 ## AMBIENTE VIRTUAL (OPCIONAL RECOMENDADO)
 
-# 1. Crie um ambiente virtual
+### 1. Crie um ambiente virtual
 ```
 python3 -m venv venv
 ```
-# 2. Ative o ambiente
+### 2. Ative o ambiente
 ```
 source venv/bin/activate   Linux/MacOS
  ou
 .\venv\Scripts\activate    Windows
 ```
 
-# 3. Instale as dependências dentro do ambiente virtual
+### 3. Instale as dependências dentro do ambiente virtual
 ```
 pip install -r requirements.txt
 ```
