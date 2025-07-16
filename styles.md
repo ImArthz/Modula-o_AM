@@ -12,9 +12,9 @@
 
   /* AJUSTES PRINCIPAIS PARA TELA CHEIA */
   section {
-    width: 100vw;
-    height: 100vh;
-    padding: 20px;
+    width: 90vw;
+    height: 90vh;
+    padding: 15px;
     box-sizing: border-box;
     background-color: #f5f7fa;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
@@ -35,8 +35,8 @@
     color: var(--secondary);
     font-size: 2.5em;
     margin-top: 0;
-    border-bottom: 3px solid var(--primary);
-    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 6px;
     text-align: center;
   }
 
@@ -72,14 +72,14 @@
   /* ===== IMAGENS ===== */
   img {
     max-height: 35vh; /* Reduzido para dar mais espaço */
-    max-width: 100%;
+    max-width: 70%;
     object-fit: contain;
   }
 
   /* ===== GRIDS ===== */
   .grid-container {
     display: grid;
-    gap: 10px;
+    gap: 6px;
     height: auto; /* Removido altura fixa para evitar rolagem */
   }
 
