@@ -1,187 +1,96 @@
 <style>
+  /* ===== ESTILOS GERAIS ===== */
+  :root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --accent: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --text: #212529;
+    --text-light: #f8f9fa;
+  }
+
+  /* AJUSTES PRINCIPAIS PARA TELA CHEIA */
   section {
-    background-color: #dbdccf;
-    background-size: cover;
-  }
-
-  .transparent {
-    background-color: transparent!important;
-  }
-
-  section.transparent img {
-    background-color: transparent!important;
-  }
-
-  .transparent-table-tr-td-th {
-    background-color: rgba(0, 0, 0, 0.0) !important;
-  }
-
-  .cabecalho {
+    width: 90vw;
+    height: 90vh;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #f5f7fa;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
     position: absolute;
-    top: 10%;
-    margin-left: 5%;
-    margin-right: 10%;
-    font-size: 48px;
-    font-weight: bold;
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Evita rolagem na seção principal */
   }
 
-  .conteudo {
-    top: 30%;
-    margin-top: 7.5vh;
-    margin-left: 5%;
-    margin-right: 5%;
-    font-size: 28px;
-    text-align: justify;
+  .content-wrapper {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
-  .conteudo-absoluto {
-    position: absolute;
-    top: 30%;
-    margin-left: 5%;
-    margin-right: 5%;
-    font-size: 28px;
-    text-align: justify;
-  }
-  .huge {
-    font-size: 32px;
-  }
-  .large {
-    font-size: 24px;
-  }
-  .normal {
-    font-size: 22px;
-  }
-  .regular {
-    font-size: 18px;
-  }
-  .small {
-    font-size: 16px;
-  }
-  .footnotesize {
-    font-size: 14px;
-  }
-  .scriptsize {
-    font-size: 12px;
-  }
-  .tiny {
-    font-size: 10px;
-  }
-  .bold {
-    font-weight: bold;
-  }
-  section.centered table {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  section.lead p {
-    text-align: justify;
-    font-size: 18px;
-  }
-  section.lead h1, h2, h3, h4 {
+  /* ===== CABEÇALHOS ===== */
+  h1 {
+    color: var(--secondary);
+    font-size: 2.5em;
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 6px;
     text-align: center;
   }
-  
-  .grid-50-50 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: justify;
+
+  h2 {
+    color: var(--primary);
+    font-size: 1.8em;
+    margin-top: 0.5em;
   }
 
-  .grid-66-33 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    text-align: justify;
+  /* ===== TEXTO E PARÁGRAFOS ===== */
+  p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 0.8em;
   }
 
-  .grid-75-25 {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    text-align: justify;
+  /* ===== LISTAS ===== */
+  ul, ol {
+    font-size: 0.9em;
+    padding-left: 1.2em;
   }
 
-  .grid-80-20 {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    text-align: justify;
+  li {
+    margin-bottom: 0.4em;
   }
 
-  .grid-33-66 {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    text-align: justify;
-  }
-
-  .grid-element {
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-  }
-  img[alt=grid-img] {
-    display: block;
+  /* ===== TABELAS ===== */
+  table {
     width: 100%;
+    font-size: 0.85em;
   }
 
-  img[alt=grid-img-35] {
-    display: block;
-    margin: auto;
-    width: 35%;
+  /* ===== IMAGENS ===== */
+  img {
+    max-height: 35vh; /* Reduzido para dar mais espaço */
+    max-width: 70%;
+    object-fit: contain;
   }
 
-  img[alt=grid-img-50] {
-    display: block;
-    margin: auto;
-    width: 50%;
+  /* ===== GRIDS ===== */
+  .grid-container {
+    display: grid;
+    gap: 6px;
+    height: auto; /* Removido altura fixa para evitar rolagem */
   }
 
-  img[alt=grid-img-75] {
-    display: block;
-    margin: auto;
-    width: 75%;
+  /* ===== CÓDIGO ===== */
+  pre {
+    font-size: 0.75em;
+    max-height: 40vh; /* Reduzido para dar mais espaço */
+    overflow: auto;
   }
-
-
-  img[alt=centered-img] {
-    display: block;
-    margin: auto;
-  }
-
-  img[alt=arquitetura-microprocessador] {
-    display: block;
-    margin: auto;
-    width: 45%;
-  }
-
-  .mid-aligned-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .flex-container {
-    display: flex;
-  }
-
-  .column-container {
-    flex: 1;
-    padding: 5px;
-  }
-
-  .column-row-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .quarter-row {
-    flex: 1;
-  }
-
-  .three-quarter-row {
-    flex: 3;
-  }
-
 </style>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
